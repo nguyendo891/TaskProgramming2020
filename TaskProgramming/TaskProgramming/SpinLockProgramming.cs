@@ -8,7 +8,7 @@ namespace TaskProgramming
 {
     class SpinLockProgramming
     {
-        public class BankAccount
+        public class BankAcc
         {
             private int balance;
 
@@ -32,11 +32,11 @@ namespace TaskProgramming
 
             }
 
-            public static void Main(string[] args)
+            public void Main()
             {
                 var tasks = new List<Task>();
 
-                var ba = new BankAccount();
+                var ba = new BankAcc();
 
                 SpinLock sl = new SpinLock();
 

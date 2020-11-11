@@ -8,7 +8,7 @@ namespace TaskProgramming
 {
     class InterlockedOperation
     {
-        public class BankAccount
+        internal class BankAccount
         {
             private int balance;
 

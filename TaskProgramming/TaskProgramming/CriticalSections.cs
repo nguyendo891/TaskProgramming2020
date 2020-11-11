@@ -7,7 +7,7 @@ namespace TaskProgramming
 {
     class CriticalSections
     {
-        public class BankAccount
+        internal class BankAccount
         {
             public object padlock = new object();
             public int Balance { get; private set; }

@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-
 namespace TaskProgramming
 {
-    internal static class Program
+    class BlockingCollectionAndProducerConsumerPattern
     {
         static BlockingCollection<int> messages =
-             new BlockingCollection<int>(new ConcurrentBag<int>(), 10);
+               new BlockingCollection<int>(new ConcurrentBag<int>(), 10);
         static CancellationTokenSource cts = new CancellationTokenSource();
         static Random random = new Random();
         public static void ProduceAndConsume()
@@ -29,7 +28,7 @@ namespace TaskProgramming
                 ae.Handle(e => true);
             }
         }
-        static void Main(string[] args)
+        static void Main()
         {
 
             Task.Factory.StartNew(ProduceAndConsume, cts.Token);
@@ -48,7 +47,7 @@ namespace TaskProgramming
 
         private static void RunProducer()
         {
-            while(true)
+            while (true)
             {
                 cts.Token.ThrowIfCancellationRequested();
                 int i = random.Next(100);
