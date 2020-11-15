@@ -28,7 +28,7 @@ namespace TaskProgramming
                 ae.Handle(e => true);
             }
         }
-        static void Main()
+        static void te()
         {
 
             Task.Factory.StartNew(ProduceAndConsume, cts.Token);
